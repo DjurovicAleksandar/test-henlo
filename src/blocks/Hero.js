@@ -8,6 +8,7 @@ import { cn } from '@/lib/helper'
 export default function Hero({ data }) {
   const isCentered = data?.variant === 'centered'
   const isFull = data?.variant === 'full'
+
   return (
     <Section
       settings={data?.settings}

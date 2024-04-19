@@ -6,6 +6,19 @@ layout: page-builder
 title: About
 permalink: /about/
 blocks:
+  - type: content_image
+    variant: reversed
+    title: Hi, I'm
+    title2: Doctor Zac
+    content: I am passioane about proactive, preventive healthcare, and inspiring other to live happier and healtier for longer. My speciality is bespoke vitality, medicatoin formulation, and aesthetics so that all my patients thrive in their everyday lives.
+    buttons:
+      - button:
+          variant: button
+          content: Learn more
+          url: https://github.com/clean-commit/gatsby-starter-henlo
+    photo:
+      alt: Dr Zac
+      image: /img/zac.png
   - type: hero
     title: About Henlo.
     content: >-

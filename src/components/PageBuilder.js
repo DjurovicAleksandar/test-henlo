@@ -41,6 +41,7 @@ export const query = graphql`
     blocks {
       type
       title
+      title2
       content
       columns {
         title

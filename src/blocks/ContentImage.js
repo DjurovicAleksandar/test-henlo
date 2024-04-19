@@ -9,8 +9,12 @@ import Image from '@/resolvers/Image'
 
 export default function ContentImage({ data }) {
   const isReversed = data?.variant === 'reversed'
+  console.log(data)
   return (
-    <Section settings={data?.settings} className="py-20 lg:py-32">
+    <Section
+      settings={data?.settings}
+      className="h-screen overflow-hidden bg-[#EEF6FF] py-20 lg:py-32"
+    >
       <Container className="max-w-7xl">
         <div
           className={cn(
@@ -19,24 +23,34 @@ export default function ContentImage({ data }) {
             { 'md:flex-row': !isReversed },
           )}
         >
-          <div className="lg:w-1/2">
-            {data?.photo?.image && (
-              <Image
-                src={data?.photo?.image}
-                alt={data?.photo?.alt}
-                className="w-full"
-              />
-            )}
+          <div className="relative flex h-full  lg:w-1/2">
+            <div className="absolute -right-[10rem] bottom-0 h-[20rem] w-[38rem] bg-blue-500">
+              22
+            </div>
+            <div>
+              {data?.photo?.image && (
+                <Image
+                  src={data?.photo?.image}
+                  alt={data?.photo?.alt}
+                  className=" w-full"
+                />
+              )}
+            </div>
           </div>
           <div className="lg:w-1/2">
             <div className="mx-auto max-w-2xl">
-              {data?.title && (
-                <Title Tag="h2" variant="lg">
-                  {data?.title}
-                </Title>
+              {data?.title && data?.title2 && (
+                <div className="flex gap-2 ">
+                  <Title Tag="h2" variant="hero" className="!text-black">
+                    {data?.title}
+                  </Title>
+                  <Title className="!text-blue-500" Tag="h1" variant="hero">
+                    {data.title2}
+                  </Title>
+                </div>
               )}
               {data?.content && (
-                <Text className="mt-4 lg:text-lg lg:leading-relaxed">
+                <Text className="mt-4 text-black lg:text-lg lg:leading-relaxed">
                   {data?.content}
                 </Text>
               )}
