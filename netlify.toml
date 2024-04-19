@@ -1,0 +1,22 @@
+[build]
+  publish = "public"
+  command = "npm run build"
+  functions = "lambda"
+[build.environment]
+  YARN_VERSION = "1.9.4"
+  YARN_FLAGS = "--no-ignore-optional"
+
+[[plugins]]
+  package = "@netlify/plugin-gatsby"
+
+[[redirects]]
+  from = "https://henlo.netlify.app"
+  to = "https://henlo.cleancommit.io"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://henlo.netlify.app/*"
+  to = "https://henlo.cleancommit.io/:splat"
+  status = 301
+  force = true
